@@ -1,9 +1,12 @@
 const express = require("express")
-require("dotenv").config()
-
 const app = express()
+require("dotenv").config();
 
 app.use(express.json())
+
+const { run } = require("./utils/database");
+run()
+
 
 
 app.get("/", (req, res)=>{
